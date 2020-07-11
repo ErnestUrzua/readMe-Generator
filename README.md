@@ -1,3 +1,29 @@
+# Software specifications
+* Title 
+* Description
+* Table of Contents
+* Installation
+* Usage
+* License
+* Contributing
+* Tests
+* Questions
+  * User GitHub profile picture
+  * User GitHub email
+* At least one badge
+
+
+## Submission on BCS
+
+You are required to submit the following:
+
+* A video demonstrating the entirety of the app's functionality 
+
+* A generated README.md file for a project repo.
+
+* The URL of the GitHub repository
+  
+
 # Unit 09 Node.js and ES6+ Homework: Good README Generator
 
 Create a command-line application that dynamically generates a README.md from a user's input. The application will be invoked with the following command:
@@ -87,13 +113,5 @@ Follow these guidelines for committing:
 
 We would like you to have more than 200 commits by graduation, so commit early and often!
 
-## Submission on BCS
 
-You are required to submit the following:
-
-* A video demonstrating the entirety of the app's functionality 
-
-* A generated README.md file for a project repo.
-
-* The URL of the GitHub repository
 
