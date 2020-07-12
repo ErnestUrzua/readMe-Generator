@@ -25,47 +25,43 @@ function promptUser() {
     return inquirer.prompt([
         {
             type: "input",
-            message: "What is the title?",
+            message: "What is the title:",
             name: "title"
         },
         {
             type: "input",
-            message: "What is the description? ",
+            message: "What is the description: ",
             name: "description"
         },
         {
-            type: "list",
-            name: "tableofcontents",
-            message: "Table of contents",
-            choices: ["Add a section", "Exit"]
-        },
-        {
             type: "input",
-            message: "Input installation instructions ",
+            message: "Installation instructions: ",
             name: "installation"
         },
         {
             type: "input",
-            message: "Usage?",
+            message: "Usage:",
             name: "usage"
         },
         {
-            type: "input",
-            message: "License",
-            name: "license"
+            type: "list",
+            message: "License:",
+            name: "license",
+            choices: ["MIT", "Apache", "None"]
         },
         {
             type: "input",
-            message: "Contributers",
+            message: "Contributers:",
             name: "contributer"
         },
         {
             type: "input",
-            message: "Test",
-            name: "test"
+            message: "tests:",
+            name: "tests"
         },
         {
-            message: "upload a picture to github:",
+            type:"confirm",
+            message: "Include your github picture:",
             name: "picture"
         },
         {
@@ -74,21 +70,14 @@ function promptUser() {
         },
         {
             type: "confirm",
-            message: "Do you want a badge",
+            message: "Include badges:",
             name: "badge"
         }
-    ]).then(function (userChoice) {
-        // depending on the user selection, 
-        switch (userChoice.promptUser) {
-
-            // call on a function to add a new section
-            case "Add a section":
-                addTableofContents();
-                break;
-            // exit the application by not calling on any functions
-            case "Exit":
-                console.log("\n End of table of contents");
-        }
+    ]).then(function () {
+        //read what is a good readme
+        // print out table of contents 
+       //
+        
     })
 
 }
@@ -111,7 +100,7 @@ function initalize() {
         // console.log(Data);
 
         //console.log("Successfully wrote to " + filename);
-        console.log(questions.title);
+        //console.log(questions.title);
     }
     catch (err) {
         console.log(err);
