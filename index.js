@@ -1,24 +1,22 @@
 var inquirer = require("inquirer");
 var fs = require("fs");
+const generateMarkdown = require("./utils/generateMarkdown");
+
+
 
 //https://gist.github.com/PurpleBooth/109311bb0361f32d87a2  good readme example
-// * Title 
-// * Description
-// * Table of Contents//??
-// * Installation //???
-// * Usage ??
-// * License ??
-// * Contributing
-// * Tests
-// * Questions
-//   * User GitHub profile picture //uploads via github 
-//   * User GitHub email
-// * At least one badge
+
 start();
 
-function start() {
+async function start() {
     console.log("Welcome to the \"Good\" readME generator!\n");
-    promptUser();
+    var answers = await promptUser();
+    console.log(answers);//works
+        console.log(answers.username);//works
+        //read what is a good readme
+        generateMarkdown(answers);
+
+    await writeToFile("GoodREADME.md", generateMarkdown);
 }
 
 function promptUser() {
@@ -60,7 +58,7 @@ function promptUser() {
             name: "tests"
         },
         {
-            type:"confirm",
+            type: "confirm",
             message: "Include your github picture:",
             name: "picture"
         },
@@ -73,71 +71,34 @@ function promptUser() {
             message: "Include badges:",
             name: "badge"
         }
-    ]).then(function () {
-        //read what is a good readme
-        // print out table of contents 
-       //
-        
-    })
+    ])
 
 }
 
-
-//array to hold questions
-//const questions = [];
-
-//array to hold ToC
-const tableofContents = [];
-
-function initalize() {
-    try {
-        const questions = promptUser();
-
-        //const html = generateHTML(questions);
-
-        //write data to file
-        // writeToFile(readME.md, questions);
-        // console.log(Data);
-
-        //console.log("Successfully wrote to " + filename);
-        //console.log(questions.title);
-    }
-    catch (err) {
-        console.log(err);
-    }
-}
 
 //function to write data from prompt to a file
 function writeToFile(fileName, data) {
     //CODE HERE
-}
-
-// define a function that lets the user add quotes to the display list
-function addTableofContents() {
-    // ask the user to input the author and then the quote
-    inquirer.prompt([
-        {
-            type: "input",
-            name: "sectionName",
-            message: "Enter a Table of contents section: "
-        },
-        {
-            type: "input",
-            name: "sectionContent",
-            message: "Please input section content: "
+    fs.writeFile(fileName, data, function (err) {
+        if (err) {
+            throw err;
         }
-    ]).then(function (userInput) {
-        // add the new table of content section with the corresponding content into our ToC storage
-        tableofContents.push({
-            sectionName: userInput.sectionName,
-            sectionContent: userInput.sectionContent
-        });
+        console.log("here is the "+ data);
+        console.log("Successfully wrote to " + fileName + " to  file");
+    });
 
-        //go back to prompt user
-        promptUser();
-    })
+
+    //append title to Md file
+    //append description
+    //installation
+    //usage
+    //append license to document
+    // contributers
+    // tests
+    // github picture
+    //github username
+    //badges
 }
 
 
 
-initalize();
