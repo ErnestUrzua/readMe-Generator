@@ -18,6 +18,8 @@
 
 * The generated README includes 1 badge that's specific to the repository.
 
+![screenrecoding](screenRecord.gif)
+
 # usage
 run using node
 ```sh
