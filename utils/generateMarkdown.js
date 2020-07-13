@@ -10,11 +10,11 @@ function generateMarkdown(data) {
   const installation = data.installation;
   const usage = data.usage;
   const licenseType = data.license;
-  const contributers = data.contributers;
-  const tests = data.test;
+  const contributers = data.contributer;
+  const tests = data.tests;
   const picture = data.picture; //boolean
   const username = data.username;
-  const badges = data.badges; //boolean
+  const badges = data.badge; //boolean
 
 
   // //get github picture and badges
@@ -32,7 +32,7 @@ function generateMarkdown(data) {
   [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
   # ${title}
   ## Table of Contents
-  - [description](##description)
+  - [description](##Description)
   - [installation](##installation)
   - [usage](##usage)
   - [license](##license)
@@ -44,7 +44,7 @@ function generateMarkdown(data) {
 
   ## Description: ${description}
   
-  ## Installation instructions: ${installation}
+  ## Installation: ${installation}
   
   ## Usage: ${usage}
   
