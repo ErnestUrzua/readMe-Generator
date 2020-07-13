@@ -1,6 +1,7 @@
 
-  # 
-  # Table of Contents
+  [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
+  # good read me
+  ## Table of Contents
   - [description](##description)
   - [installation](##installation)
   - [usage](##usage)
@@ -10,22 +11,25 @@
   - [picture](##Github Picture)
   - [username](##Github Username)
   - [badges](##Badges)
-  ## 
+
+  ## Description: 
   
-  ## 
+  ## Installation instructions: install
   
-  ## 
+  ## Usage: for personal
   
-  ## MIT
+  ## License type: MIT
+  ![Github license](##undefined)
   
-  ## undefined
+  ## Contributers: undefined
   
-  ## undefined
+  ## Tests: undefined
   
-  ![Github Picture]()
+  ## Github Picture:
+  ![Github Picture](##undefined)
   
-  ## ernesturzua
+  ## Github username:  ernesturzua
   
-  ## undefined
+  ## Badges undefined
   
   

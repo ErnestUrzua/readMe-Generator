@@ -1,26 +1,37 @@
 const axios = require("axios");
+var githubPicture;
+var license;
+var bashBadge = "[![Bash Shell](https://badges.frapsoft.com/bash/v1/bash.png?v=103)](https://github.com/ellerbrock/open-source-badges/)";
+
 
 function generateMarkdown(data) {
   const title = data.title;
   const description = data.description;
   const installation = data.installation;
   const usage = data.usage;
-  const license = data.license;
+  const licenseType = data.license;
   const contributers = data.contributers;
   const tests = data.test;
-  const picture = data.picture;
+  const picture = data.picture; //boolean
   const username = data.username;
-  const badges = data.badges;
- 
+  const badges = data.badges; //boolean
 
 
   // //get github picture and badges
   getGithubInfo(picture, username);
 
+  //check what license type to display
+  includeLicense(licenseType);
+
+  //if they want badges append to file
+  if (badges === true){
+    //append to md file
+  }
 
   return markdown = `
+  [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
   # ${title}
-  # Table of Contents
+  ## Table of Contents
   - [description](##description)
   - [installation](##installation)
   - [usage](##usage)
@@ -30,23 +41,26 @@ function generateMarkdown(data) {
   - [picture](##Github Picture)
   - [username](##Github Username)
   - [badges](##Badges)
-  ## ${description}
+
+  ## Description: ${description}
   
-  ## ${installation}
+  ## Installation instructions: ${installation}
   
-  ## ${usage}
+  ## Usage: ${usage}
   
-  ## ${license}
+  ## License type: ${licenseType}
+  ![Github license](##${license})
   
-  ## ${contributers}
+  ## Contributers: ${contributers}
   
-  ## ${tests}
+  ## Tests: ${tests}
   
-  ![Github Picture]()
+  ## Github Picture:
+  ![Github Picture](##${githubPicture})
   
-  ## ${username}
+  ## Github username:  ${username}
   
-  ## ${badges}
+  ## Badges ${badges}
   
   `;
 
@@ -65,12 +79,23 @@ function getGithubInfo(picture, username) {
     //get github user avatar picture
     axios.get(queryUrl).then(function (result) {
       //console.log(result.data[0].owner.avatar_url);//works
-      var githubPicture = result.data[0].owner.avatar_url;
+      githubPicture = result.data[0].owner.avatar_url;
       console.log(githubPicture);
       return githubPicture;
     });
 
   }
+}
+
+//checks what license to display
+function includeLicense(license) {
+  if (license === "Apache") {
+    license = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+  }
+  if (license === "MIT") {
+    license = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+  }
+  return license;
 }
 
 
