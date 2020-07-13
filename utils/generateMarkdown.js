@@ -1,6 +1,6 @@
 const axios = require("axios");
-var githubPicture;
-var license;
+var githubPicture = "https://avatars2.githubusercontent.com/u/19627102?v=4";
+var license = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
 var bashBadge = "[![Bash Shell](https://badges.frapsoft.com/bash/v1/bash.png?v=103)](https://github.com/ellerbrock/open-source-badges/)";
 
 
@@ -24,7 +24,7 @@ function generateMarkdown(data) {
   includeLicense(licenseType);
 
   //if they want badges append to file
-  if (badges === true){
+  if (badges === true) {
     //append to md file
   }
 
@@ -38,29 +38,36 @@ function generateMarkdown(data) {
   - [license](##license)
   - [contributors](##Contributors)
   - [tests](##Tests)
-  - [picture](##Github Picture)
-  - [username](##Github Username)
+  - [picture](##Github-Picture)
+  - [username](##Github-username)
   - [badges](##Badges)
 
-  ## Description: ${description}
+  ## Description: 
+  ${description}
   
-  ## Installation: ${installation}
+  ## Installation: 
+  ${installation}
   
-  ## Usage: ${usage}
+  ## Usage: 
+  ${usage}
   
   ## License type: ${licenseType}
-  ![Github license](##${license})
+  ![Github license] ${license}
   
-  ## Contributers: ${contributers}
+  ## Contributers: 
+  ${contributers}
   
-  ## Tests: ${tests}
+  ## Tests: 
+  ${tests}
   
   ## Github Picture:
-  ![Github Picture](##${githubPicture})
+  ![Github Picture](${githubPicture})
   
-  ## Github username:  ${username}
+  ## Github username: 
+  ${username}
   
-  ## Badges ${badges}
+  ## Badges 
+  ${bashBadge}
   
   `;
 
@@ -93,7 +100,7 @@ function includeLicense(license) {
     license = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
   }
   if (license === "MIT") {
-    license = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+    license = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
   }
   return license;
 }

@@ -1,35 +1,42 @@
 
   [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
-  # good read me
+  # Good Readme Generator
   ## Table of Contents
-  - [Description](##Description)
-  - [Installation](##installation)
+  - [description](##Description)
+  - [installation](##installation)
   - [usage](##usage)
-  - [license](##license-type)
-  - [contributors](##contributors)
+  - [license](##license)
+  - [contributors](##Contributors)
   - [tests](##Tests)
-  - [picture](##Github Picture)
-  - [username](##Github Username)
+  - [picture](##Github-Picture)
+  - [username](##Github-username)
   - [badges](##Badges)
 
-  ## Description: shit that works
+  ## Description: 
+  generates readme.md
   
-  ## Installation: none that 
+  ## Installation: 
+  in terminal ```node index.js```
   
   ## Usage: 
+  creates professional readme for your repositories.
   
   ## License type: MIT
-  ![Github license](##undefined)
+  ![Github license] [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   
   ## Contributers: 
+  Ernest URzua
   
   ## Tests: 
+  none
   
   ## Github Picture:
-  ![Github Picture](##undefined)
+  ![Github Picture](https://avatars2.githubusercontent.com/u/19627102?v=4)
   
-  ## Github username:  ernesturzua
+  ## Github username: 
+  ernesturzua
   
-  ## Badges true
+  ## Badges 
+  [![Bash Shell](https://badges.frapsoft.com/bash/v1/bash.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
   
   
